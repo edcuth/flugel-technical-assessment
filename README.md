@@ -1,5 +1,5 @@
 # fugel-technical-assessment
-## Technical challenge as requested by the Fugel Team
+### Technical challenge as requested by the Fugel Team
 
 
 ## Challenge:
@@ -14,30 +14,35 @@
 
 
 ## Documentation:
-To be updated!
+Hi, I'm the Documentation for this repo, but that name is kinda long, so people call me Doc, and I'm here to (hopefully) answer all your questions and help you get this repo up and running!
 
 ### Terraform
-#### S3 bucket
+#### S3 Bucket
+Our S3 Bucket is created using our main.tf ubicated in the /terraform/S3 directory.
+
+#### S3 Bucket Test
 To be updated!
 
-
-#### EC2 instance
+#### EC2 Instance
 To be updated!
 
+#### EC2 Instance Test
+To be updated!
 
 ### Python HTTP service
 To be updated!
 
-#### Endpoints
-##### /tags
-Name=Flugel
-Owner=InfraTeam
+### Endpoints
+#### /tags
+This endpoint will return the tags of the EC2 instance and the S3 Cluster, being in this case:
+* Name=Flugel
+* Owner=InfraTeam
 
 #### /shutdown
-To be updated!
+
 
 ### Github Actions
-To be updated
+To be updated!
 
 
 
