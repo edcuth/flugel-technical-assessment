@@ -11,8 +11,8 @@ resource "aws_s3_bucket" "fugel_assessment" {
     }
 
     tags = {
-        Nanme = var.tag_bucket_name
-        Owner = var.tag_bucket_owner
+        Name = var.bucket_tag_name
+        Owner = var.bucket_tag_owner
     }
 }
 

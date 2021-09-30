@@ -4,14 +4,14 @@ variable "region" {
     default = "NA west"
 }
 
-variable "bucket_tag_name" {
-    description = "The Name tag set for the S3 Bucket"
+variable "instance_tag_name" {
+    description = "The Name tag for the EC2 instance"
     type = string
     default = "Fugel"
 }
 
-variable "bucket_tag_owner" {
-    description = "Owner of the S3 bucket"
+variable "instance_tag_owner" {
+    description = "The Owner tag for the EC2 instance"
     type = string 
     default = "InfraTeam"
 }

@@ -8,15 +8,14 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// An example of how to test the Terraform module in examples/terraform-aws-s3-example using Terratest.
+// Check if the tags of the S3 Buckets match the expected ones
 func TestTerraformAwsS3Tags(t *testing.T) {
 	t.Parallel()
 
-	// Give this S3 Bucket a unique ID for a name tag so we can distinguish it from any other Buckets provisioned
-	// in your AWS account
+	// Expected Name tag
 	expectedName := "Fugel"
 
-	// Give this S3 Bucket an environment to operate as a part of for the purposes of resource tagging
+	// Expected Owner Tag
 	expectedOwner := "InfraTeam"
 
 	// Pick a random AWS region to test in. This helps ensure your code works in all regions.
@@ -42,16 +41,12 @@ func TestTerraformAwsS3Tags(t *testing.T) {
 	// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
 
+	// Get the values of the tags from the Output
 	bucketNameTag := terraform.Output(t, terraformOptions, "bucket_tag_name")
 	bucketOwnerTag := terraform.Output(t, terraformOptions, "bucket_tag_owner")
 
+	// Test if the values returned through the output match the expected values
 	assert.Equal(t, bucketNameTag, expectedName)
 	assert.Equal(t, bucketOwnerTag, expectedOwner)
-
-	bucketWithNameTag := aws.FindS3BucketWithTag(t, awsRegion, "Name", expectedName)
-	bucketWithOwnerTag := aws.FindS3BucketWithTag(t, awsRegion, "Owner", expectedOwner)
-
-	assert.Equal(t, "fugel_assessment", bucketWithNameTag)
-	assert.Equal(t, "fugel_assessment", bucketWithOwnerTag)
 
 }
