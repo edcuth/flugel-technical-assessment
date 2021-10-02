@@ -1,5 +1,5 @@
-# fugel-technical-assessment
-### Technical challenge as requested by the Fugel Team
+# flugel-technical-assessment
+### Technical challenge as requested by the Flugel Team
 
 
 ## Challenge:

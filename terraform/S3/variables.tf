@@ -7,7 +7,7 @@ variable "region" {
 variable "bucket_tag_name" {
     description = "The Name tag set for the S3 Bucket"
     type = string
-    default = "Fugel"
+    default = "Flugel"
 }
 
 variable "bucket_tag_owner" {

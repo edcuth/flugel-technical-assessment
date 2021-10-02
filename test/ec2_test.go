@@ -22,7 +22,7 @@ func TestTerraformAwsHelloWorldExample(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	// Expected tag values for `Name` and `Onwer`
-	expectedName := "Fugel"
+	expectedName := "Flugel"
 	expectedOwner := "InfraTeam"
 
 	// Get the values of the tags from the Output

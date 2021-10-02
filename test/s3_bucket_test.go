@@ -13,7 +13,7 @@ func TestTerraformAwsS3Tags(t *testing.T) {
 	t.Parallel()
 
 	// Expected Name tag
-	expectedName := "Fugel"
+	expectedName := "Flugel"
 
 	// Expected Owner Tag
 	expectedOwner := "InfraTeam"

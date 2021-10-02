@@ -7,7 +7,7 @@ variable "region" {
 variable "instance_tag_name" {
     description = "The Name tag for the EC2 instance"
     type = string
-    default = "Fugel"
+    default = "Flugel"
 }
 
 variable "instance_tag_owner" {

@@ -13,7 +13,7 @@ def ec2_test(ec2_client):
         TagSpecifications=[
             {
                 'ResourceType': 'instance',
-                'Tags':[{'Key':'Name', 'Value':'Fugel'}, {'Key':'Owner', 'Value':'InfraTeam'}]}],
+                'Tags':[{'Key':'Name', 'Value':'Flugel'}, {'Key':'Owner', 'Value':'InfraTeam'}]}],
         MaxCount=1,
         MinCount=1
         )
@@ -24,7 +24,7 @@ def test_instance_name_tag(ec2_client, ec2_test):
     # Check if the Name tag is set properly
     my_instance = MyEC2Client()
     tags = my_instance.list_tags()
-    assert "Name" in tags[0] and "Fugel" in tags[1]
+    assert "Name" in tags[0] and "Flugel" in tags[1]
 
 def test_instance_owner_tag(ec2_client, ec2_test):
     # Check if the Owner tag is set properly
