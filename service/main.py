@@ -7,14 +7,20 @@ def create_app():
     
     @app.route('/tags')
     def tags():
+        # Returns the tags of the EC2 Instance.
         response = ec2.describe_tags(InstanceIds=['aws_instance.fugel_assessment'])
         tags = ""
-        for key in response.keys():
-            tags += key + ": " + response[key] + "\n"
+        for r in response['Tags']:
+            tags += r['key'] + ": " + r['value'] + "\n"
         return tags
 
     @app.route('/shutdown')
     def shutdown():
-        ec2.stop_instance(Hibernate=False, InstanceIds=['aws_instance.fugel_assessment'])
+        # Stops the instance. 
+        ec2.stop_instances(InstanceIds=['aws_instance.fugel_assessment'])
 
     return app
+
+
+if __name__ == '__main__':
+    create_app()
